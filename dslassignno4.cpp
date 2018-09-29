@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 class str
@@ -19,7 +18,7 @@ class str
             s3[i]=s1[i];
         }
 
-        int k=i;
+        int k=i; //i value has came out incremented by one.
         for(h=0;s2[h]!='\0';h++)
         {
             s3[k]=s2[h];
@@ -55,9 +54,9 @@ class str
         i=0;    //pointing to first index.
 
         for(j=0;s1[j]!='\0';j++);   //making j=strlen(s1);
-        k=j-1;	//IMPORTANT.
+        k=j-1;	//IMPORTANT pointing to last index of array.
 
-        while(i<k)
+        while(i<k) //IMPORTANT.
         {
             temp=s1[i];
             s1[i]=s1[k];
@@ -76,14 +75,12 @@ class str
     void strcom(char *s1,char *s2)
     {   int flag,l1,l2;
 
-
-
         for(l1=0;s1[l1]!='\0';l1++);
         for(l2=0;s2[l2]!='\0';l2++);
 
         if(l1==l2)
         {
-            for(q=0;q<=l1;q++)
+            for(q=0;q<l1;q++)
             {   flag=1;
                 if(s1[q]!=s2[q])
                 {
@@ -136,6 +133,33 @@ class str
 			}
 		}
 	}
+
+	void substring(char *s1,char *s2)
+	{
+	 int l;                                                              //length of string2
+    for(l=0;s2[l]!='\0';l++); //length of smaller string.
+
+
+    for(i=0,j=0;s1[i]!='\0' && s2[j]!='\0';i++)
+    {
+        if(s1[i]==s2[j])
+        {
+            j++;
+        }
+        else
+        {
+            j=0;
+        }
+    }
+    if(j==l) //important.
+    {   cout<<"\nSubstring is found. ";
+    }
+    else
+    {
+        cout<<"\nNo Substring is found. ";
+    }
+
+	}
 };
 
 int main()
@@ -143,10 +167,11 @@ int main()
     char z;
     int ch;
     char s1[50],s2[50],s3[50];
+    cout<<"\n*****STRING OPERATIONS*****\n";
 
 do
 {
-    cout<<" \nEnter 1.String length 2.string copy 3.string concatination 4.string reverse 5.string comparison 6.Frequency count"<<endl;
+    cout<<" Enter \n1.String length \n2.string copy \n3.string concatination \n4.string reverse \n5.string comparison \n6.Frequency count \n7.For Substring"<<endl;
     cin>>ch;
     switch(ch)
     {
@@ -192,6 +217,13 @@ do
             st1.freq(s1);
             break;
 
+    case 7: cout<<" Enter bigger string \n";
+            cin>>s1;
+            cout<<" Enter smaller string \n";
+            cin>>s2;
+
+            st1.substring(s1,s2);
+            break;
 
         default:cout<<"!!!!SORRY!!!!";
                 break;
