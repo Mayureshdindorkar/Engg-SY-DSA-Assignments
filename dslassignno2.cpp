@@ -38,7 +38,7 @@ class stud
 
 	void add()
 	{
-		if(marks>0&&marks<30)
+		if(marks>=0&&marks<=30)
 		sum=sum+marks;
 
 	}
