@@ -2,7 +2,7 @@
 
 using namespace std;
 int total;
-static int j[31];
+static int j[31]; //Considering maximum marks as 30.
 
 class stud
 {	private:  static int max,min,ab;
