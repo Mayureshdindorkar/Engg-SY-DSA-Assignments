@@ -98,7 +98,7 @@ class searching
 
 	for(i=1;i<f;i++)	//no. of passes
 	{
-	    for(j=1;j<f-1;j++) //VERY IMP no. of comparisions ethe j 1 pasun suru zala aahe special for fibonacci
+	    for(j=1;j<f;j++) //VERY IMP no. of comparisions ethe j 1 pasun suru zala aahe special for fibonacci
 	    {
 	    	if(ar[j]>ar[j+1])
 		{
